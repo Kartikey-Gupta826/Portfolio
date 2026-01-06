@@ -2,6 +2,7 @@ import {
   Linkedin,
   Mail,
   Phone,
+  Scan,
   Send,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -114,12 +115,12 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <h3 className="text-2xl font-semibold">Follow Me</h3>
-              <div className="flex space-x-4 justify-center">
+            <span className="text-2xl font-semibold">Follow Me : </span>
+              <span className="flex space-x-4">
                 <a href="https://www.linkedin.com/in/kartikey-gupta-099147316/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                 </a>
-              </div>
+              </span>
           </div>
 
           <div className="bg-card p-8 rounded-lg shadow-sm">
