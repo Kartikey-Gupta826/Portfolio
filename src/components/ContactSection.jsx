@@ -115,7 +115,7 @@ export const ContactSection = () => {
             </div>
 
             <h3 className="text-2xl font-semibold">Follow Me</h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center">
                 <a href="https://www.linkedin.com/in/kartikey-gupta-099147316/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                 </a>

@@ -3,10 +3,10 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Flapping Bird Game",
-    description: "A game to entertain",
-    image: "/projects/pic1.jpg",
-    tags: ["JS","Vanilla CSS"],
+    title: "Management System",
+    description: "A simple management system web application.",
+    image: "/projects/management-systems.jpg",
+    tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -16,10 +16,21 @@ const projects = [
     description:
       "A place to store memories and build connection.",
     image: "/projects/travel.jpg",
-    tags: ["React JS", "Tailwind Css","Express JS"],
+    tags: ["React JS", "Tailwind Css", "Express JS", "MongoDB"],
     demoUrl: "#",
     githubUrl: "#",
   },
+  {
+    id: 3,
+    title: "Chat Bot",
+    description:
+      "A place to store memories and build connection.",
+    image: "/projects/Chatbot Chat Message.jpg",
+    tags: ["React JS", "Tailwind Css", "Express JS", "MongoDB", "Python"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+
 
 ];
 
@@ -33,7 +44,7 @@ export const ProjectsSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. 
+          Here are some of my recent projects.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
