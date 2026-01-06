@@ -2,24 +2,28 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 90, category: "frontend" },
-  { name: "JavaScript", level: 75, category: "frontend" },
-  { name: "React", level: 75, category: "frontend" },
-  { name: "Tailwind CSS", level: 75, category: "frontend" },
+  // Language
+  { name: "HTML/CSS", level: 90, category: "Language" },
+  { name: "JavaScript", level: 75, category: "Language" },
+  { name: "Java", level: 75, category: "Language" },
+  { name: "C/C++", level: 75, category: "Language" },
+  { name: "Python", level: 75, category: "Language" },
 
-  // Backend
-  { name: "Node.js", level: 75, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 60, category: "backend" },
+  // Frame Work
+  { name: "React.js", level: 75, category: "Frame Work" },
+  { name: "Node.js", level: 75, category: "Frame Work" },
+  { name: "Express.js", level: 75, category: "Frame Work" },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Figma", level: 60, category: "tools" },
-  { name: "VS Code", level: 85, category: "tools" },
+  { name: "Git/GitHub", level: 90, category: "Tool" },
+  { name: "VS Code", level: 85, category: "Tool" },
+  { name: "MongoDB", level: 75, category: "Tool" },
+  { name: "My SQL", level: 75, category: "Tool" },
+  { name: "Tailwind CSS", level: 75, category: "Tool" },
+
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["all", "Language", "Frame Work", "Tool"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
