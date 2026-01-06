@@ -42,12 +42,11 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Initialize EmailJS (you need to set up your EmailJS account)
-      emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Get this from EmailJS dashboard
+      emailjs.init("ifg4Kac_CvHwetugp"); 
 
       const response = await emailjs.send(
-        "YOUR_SERVICE_ID_HERE", // Get from EmailJS
-        "YOUR_TEMPLATE_ID_HERE", // Get from EmailJS
+        "service_u86x18i", 
+        "template_bd72g0r", 
         {
           to_email: "kartikeygupta261204@gmail.com",
           from_name: formData.name,
@@ -84,10 +83,6 @@ export const ContactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold mb-6">
-              Contact Information
-            </h3>
-
             <div className="space-y-6 justify-center">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
@@ -119,13 +114,12 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <div className="pt-8">
+            <h3 className="text-2xl font-semibold">Follow Me</h3>
               <div className="flex space-x-4">
                 <a href="https://www.linkedin.com/in/kartikey-gupta-099147316/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                 </a>
               </div>
-            </div>
           </div>
 
           <div className="bg-card p-8 rounded-lg shadow-sm">
