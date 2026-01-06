@@ -1,31 +1,78 @@
 import {
-  Instagram,
   Linkedin,
   Mail,
   Phone,
   Send,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate form
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      // Initialize EmailJS (you need to set up your EmailJS account)
+      emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Get this from EmailJS dashboard
+
+      const response = await emailjs.send(
+        "YOUR_SERVICE_ID_HERE", // Get from EmailJS
+        "YOUR_TEMPLATE_ID_HERE", // Get from EmailJS
+        {
+          to_email: "kartikeygupta261204@gmail.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        }
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -47,7 +94,7 @@ export const ContactSection = () => {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Email</h4>
+                  <h4 className="font-medium text-left">Email</h4>
                   <a
                     href="mailto:kartikeygupta261204@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -61,7 +108,7 @@ export const ContactSection = () => {
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Phone</h4>
+                  <h4 className="font-medium text-left">Phone</h4>
                   <a
                     href="tel:8168948084"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -73,22 +120,15 @@ export const ContactSection = () => {
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+              <div className="flex space-x-4">
+                <a href="https://www.linkedin.com/in/kartikey-gupta-099147316/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-xs">
+          <div className="bg-card p-8 rounded-lg shadow-sm">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -103,8 +143,10 @@ export const ContactSection = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Kartikey..."
                 />
               </div>
@@ -120,8 +162,10 @@ export const ContactSection = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="a@gmail.com"
                 />
               </div>
@@ -136,9 +180,11 @@ export const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   required
                   rows="4"
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 />
               </div>
@@ -147,7 +193,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95 w-full flex items-center justify-center gap-2"
+                  "px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-95 w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:scale-100"
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
