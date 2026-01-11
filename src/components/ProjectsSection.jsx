@@ -20,17 +20,6 @@ const projects = [
     demoUrl: "#",
     githubUrl: "#",
   },
-  {
-    id: 3,
-    title: "Chat Bot",
-    description:
-      "A place to store memories and build connection.",
-    image: "/projects/Chatbot Chat Message.jpg",
-    tags: ["React JS", "Tailwind Css", "Express JS", "MongoDB", "Python"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-
 
 ];
 
