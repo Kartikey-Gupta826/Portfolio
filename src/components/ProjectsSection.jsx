@@ -7,7 +7,7 @@ const projects = [
     description: "A simple management system web application.",
     image: "/projects/management-systems.jpg",
     tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
-    demoUrl: "#",
+    demoUrl: "https://github.com/Kartikey-Gupta826/System-Management",
     githubUrl: "https://github.com/Kartikey-Gupta826/System-Management",
   },
   {
