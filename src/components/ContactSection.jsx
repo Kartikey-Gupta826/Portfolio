@@ -1,5 +1,6 @@
 import {
   Linkedin,
+  Github,
   Mail,
   Phone,
   Scan,
@@ -115,12 +116,27 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            <span className="flex space-x-4">
-              <span className="text-2xl font-semibold">Follow Me : </span>
-              <a href="https://www.linkedin.com/in/kartikey-gupta-099147316/" target="_blank" rel="noopener noreferrer">
+            <span className="flex items-center space-x-4">
+              <span className="text-2xl font-semibold">Follow Me :</span>
+
+              <a
+                href="https://www.linkedin.com/in/kartikey-gupta-099147316/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
               </a>
+
+              <a
+                href="https://github.com/Kartikey-Gupta826"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+              </a>
             </span>
+
+
           </div>
 
           <div className="bg-card p-8 rounded-lg shadow-sm">
