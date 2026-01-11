@@ -8,7 +8,7 @@ const projects = [
     image: "/projects/management-systems.jpg",
     tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Kartikey-Gupta826/System-Management",
   },
   {
     id: 2,
@@ -17,8 +17,8 @@ const projects = [
       "A place to store memories and build connection.",
     image: "/projects/travel.jpg",
     tags: ["React JS", "Tailwind Css", "Express JS", "MongoDB"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://travelstory-nine.vercel.app",
+    githubUrl: "https://github.com/Kartikey-Gupta826/travelstory",
   },
 
 ];
