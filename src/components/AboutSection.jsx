@@ -30,7 +30,7 @@ export const AboutSection = () => {
               </a>
 
               <a 
-                href="/Kartikey_Gupta_CV.pdf"
+                href="/resume_Kartikey.docx"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
