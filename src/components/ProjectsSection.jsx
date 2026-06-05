@@ -7,7 +7,7 @@ const projects = [
     description: "A simple management system web application.",
     image: "/projects/management-systems.jpg",
     tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
-    // demoUrl: "https://github.com/Kartikey-Gupta826/System-Management",
+    demoUrl: "https://github.com/Kartikey-Gupta826/System-Management",
     githubUrl: "https://github.com/Kartikey-Gupta826/System-Management",
   },
   {
@@ -24,20 +24,20 @@ const projects = [
   id: 3,
   title: "RPG Game",
   description:
-    "An AI-powered RPG dialogue engine featuring dynamic NPC interactions, conversation memory, and context-aware responses using Google Gemini API.",
-  image: "/projects/rpg-game.jpg",
+    "An AI-powered RPG dialogue engine featuring dynamic NPC interactions.",
+  image: "/projects/rpg.jpg",
   tags: ["Java", "Maven", "REST API", "Gen AI"],
-  // demoUrl: "https://github.com/Kartikey-Gupta826/ZAVA-GAME",
+  demoUrl: "https://github.com/Kartikey-Gupta826/ZAVA-GAME",
   githubUrl: "https://github.com/Kartikey-Gupta826/ZAVA-GAME",
   },
   {
     id: 4,
     title: "Kitchen Preparation Time Prediction System",
     description:
-      "A machine learning system that predicts restaurant kitchen preparation times using operational data and a two-stage Random Forest architecture.",
-    image: "/projects/kpt.jpg",
+      "A machine learning system that predicts restaurant kitchen preparation times.",
+    image: "/projects/kpt.png",
     tags: ["Python", "Scikit-learn", "Random Forest", "Pandas"],
-    // demoUrl: "https://github.com/Kartikey-Gupta826/kpt_calculation",
+    demoUrl: "https://github.com/Kartikey-Gupta826/kpt_calculation",
     githubUrl: "https://github.com/Kartikey-Gupta826/kpt_calculation",
   },
 
