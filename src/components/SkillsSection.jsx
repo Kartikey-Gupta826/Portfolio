@@ -1,5 +1,15 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import {
+  BrainCircuit,
+  BarChart3,
+  Braces,
+  Database,
+  KeyRound,
+  Server,
+  Sparkles,
+  Workflow,
+} from "lucide-react";
 
 import {
   SiJavascript,
@@ -14,6 +24,13 @@ import {
   SiMongodb,
   SiMysql,
   SiGithub,
+  SiFastapi,
+  SiTensorflow,
+  SiPandas,
+  SiQt,
+  SiDocker,
+  SiSelenium,
+  SiPytest,
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
@@ -26,21 +43,44 @@ const skills = [
   { name: "C/C++", icon: SiCplusplus, category: "Language" },
   { name: "HTML/CSS", icon: SiHtml5, category: "Language" },
 
+  // Backend & Agentic AI
+  { name: "FastAPI", icon: SiFastapi, category: "Backend & AI" },
+  { name: "FastMCP", icon: Server, category: "Backend & AI" },
+  { name: "Gemini API", icon: Sparkles, category: "Backend & AI" },
+  { name: "Tool-calling", icon: Workflow, category: "Backend & AI" },
+  { name: "RAG", icon: BrainCircuit, category: "Backend & AI" },
+  { name: "Structured Output", icon: Braces, category: "Backend & AI" },
+  { name: "Pydantic", icon: Braces, category: "Backend & AI" },
+  { name: "Selenium", icon: SiSelenium, category: "Backend & AI" },
+  { name: "PyQt5", icon: SiQt, category: "Backend & AI" },
+
   // Frameworks
   { name: "React.js", icon: SiReact, category: "Framework" },
   { name: "Node.js", icon: SiNodedotjs, category: "Framework" },
   { name: "Express.js", icon: SiExpress, category: "Framework" },
   { name: "Tailwind CSS", icon: SiTailwindcss, category: "Framework" },
   { name: "Scikit-learn", icon: SiScikitlearn, category: "Framework" },
+  { name: "TensorFlow", icon: SiTensorflow, category: "Framework" },
+  { name: "Pandas", icon: SiPandas, category: "Framework" },
+  { name: "Matplotlib", icon: BarChart3, category: "Framework" },
 
   // Tools
-  { name: "MongoDB", icon: SiMongodb, category: "Tool" },
-  { name: "MySQL", icon: SiMysql, category: "Tool" },
-  { name: "Git/GitHub", icon: SiGithub, category: "Tool" },
-
+  { name: "MongoDB", icon: SiMongodb, category: "Database & Tools" },
+  { name: "MySQL", icon: SiMysql, category: "Database & Tools" },
+  { name: "Git/GitHub", icon: SiGithub, category: "Database & Tools" },
+  { name: "ChromaDB", icon: Database, category: "Database & Tools" },
+  { name: "JWT", icon: KeyRound, category: "Database & Tools" },
+  { name: "Docker", icon: SiDocker, category: "Database & Tools" },
+  { name: "pytest", icon: SiPytest, category: "Database & Tools" },
 ];
 
-const categories = ["all", "Language", "Framework", "Tool"];
+const categories = [
+  "all",
+  "Language",
+  "Backend & AI",
+  "Framework",
+  "Database & Tools",
+];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
