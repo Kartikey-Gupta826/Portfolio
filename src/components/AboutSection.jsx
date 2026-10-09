@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { BrainCircuit, Code, Server } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -11,14 +11,13 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer 
+              Full-Stack Engineer &amp; Agentic AI Developer
             </h3>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              I build end-to-end web applications and AI-powered systems,
+              combining thoughtful user experiences, reliable APIs, and
+              agentic workflows that solve real-world problems.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -45,10 +44,10 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Backend Development</h4>
+                  <h4 className="font-semibold text-lg">Frontend Development</h4>
                   <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
+                    Building responsive, accessible interfaces with React and
+                    modern web technologies.
                   </p>
                 </div>
               </div>
@@ -56,13 +55,27 @@ export const AboutSection = () => {
             <div className="bg-card border border-border rounded-lg p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
+                  <Server className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Frontend Development</h4>
+                  <h4 className="font-semibold text-lg">Backend &amp; APIs</h4>
                   <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
+                    Designing reliable services, REST APIs, authentication,
+                    and data-driven applications.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-6 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <BrainCircuit className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-lg">Agentic AI Systems</h4>
+                  <p className="text-muted-foreground">
+                    Creating tool-using AI agents and RAG experiences with
+                    structured outputs and safety-focused workflows.
                   </p>
                 </div>
               </div>
