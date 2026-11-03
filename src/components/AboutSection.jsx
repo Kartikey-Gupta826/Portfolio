@@ -28,8 +28,9 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
 
-              <a 
-                href="/Resume_Kartikey_08811502723.pdf"
+              <a
+                href="/Resume.pdf"
+                download="Resume.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
