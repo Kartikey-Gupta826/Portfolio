@@ -4,10 +4,14 @@ import {
   BrainCircuit,
   BarChart3,
   Braces,
+  Cloud,
   Database,
+  GitBranch,
   KeyRound,
+  Network,
   Server,
   Sparkles,
+  TestTube,
   Workflow,
 } from "lucide-react";
 
@@ -29,6 +33,7 @@ import {
   SiPandas,
   SiQt,
   SiDocker,
+  SiNextdotjs,
   SiSelenium,
   SiPytest,
 } from "react-icons/si";
@@ -41,45 +46,63 @@ const skills = [
   { name: "Java", icon: FaJava, category: "Language" },
   { name: "Python", icon: SiPython, category: "Language" },
   { name: "C/C++", icon: SiCplusplus, category: "Language" },
-  { name: "HTML/CSS", icon: SiHtml5, category: "Language" },
+  { name: "SQL", icon: Database, category: "Language" },
 
-  // Backend & Agentic AI
-  { name: "FastAPI", icon: SiFastapi, category: "Backend & AI" },
-  { name: "FastMCP", icon: Server, category: "Backend & AI" },
-  { name: "Gemini API", icon: Sparkles, category: "Backend & AI" },
-  { name: "Tool-calling", icon: Workflow, category: "Backend & AI" },
-  { name: "RAG", icon: BrainCircuit, category: "Backend & AI" },
-  { name: "Structured Output", icon: Braces, category: "Backend & AI" },
-  { name: "Pydantic", icon: Braces, category: "Backend & AI" },
-  { name: "Selenium", icon: SiSelenium, category: "Backend & AI" },
-  { name: "PyQt5", icon: SiQt, category: "Backend & AI" },
+  // Frontend
+  { name: "HTML/CSS", icon: SiHtml5, category: "Frontend" },
+  { name: "Next.js", icon: SiNextdotjs, category: "Frontend" },
+  { name: "React.js", icon: SiReact, category: "Frontend" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend" },
+  { name: "PyQt5", icon: SiQt, category: "Frontend" },
 
-  // Frameworks
-  { name: "React.js", icon: SiReact, category: "Framework" },
-  { name: "Node.js", icon: SiNodedotjs, category: "Framework" },
-  { name: "Express.js", icon: SiExpress, category: "Framework" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, category: "Framework" },
-  { name: "Scikit-learn", icon: SiScikitlearn, category: "Framework" },
-  { name: "TensorFlow", icon: SiTensorflow, category: "Framework" },
-  { name: "Pandas", icon: SiPandas, category: "Framework" },
-  { name: "Matplotlib", icon: BarChart3, category: "Framework" },
+  // Backend
+  { name: "Node.js", icon: SiNodedotjs, category: "Backend" },
+  { name: "Express.js", icon: SiExpress, category: "Backend" },
+  { name: "FastAPI", icon: SiFastapi, category: "Backend" },
+  { name: "REST APIs", icon: Network, category: "Backend" },
+  { name: "WebSockets", icon: Network, category: "Backend" },
+  { name: "Pydantic", icon: Braces, category: "Backend" },
 
-  // Tools
+  // Agentic AI
+  { name: "FastMCP", icon: Server, category: "Agentic AI" },
+  { name: "Gemini API", icon: Sparkles, category: "Agentic AI" },
+  { name: "Tool-calling", icon: Workflow, category: "Agentic AI" },
+  { name: "RAG", icon: BrainCircuit, category: "Agentic AI" },
+  { name: "LangChain.js", icon: Workflow, category: "Agentic AI" },
+  { name: "LangGraph.js", icon: Workflow, category: "Agentic AI" },
+  { name: "Structured Output", icon: Braces, category: "Agentic AI" },
+
+  // Machine Learning & Deep Learning
+  { name: "Scikit-learn", icon: SiScikitlearn, category: "ML & DL" },
+  { name: "TensorFlow", icon: SiTensorflow, category: "ML & DL" },
+  { name: "Pandas", icon: SiPandas, category: "ML & DL" },
+  { name: "Matplotlib", icon: BarChart3, category: "ML & DL" },
+
+  // Tools & DevOps
   { name: "MongoDB", icon: SiMongodb, category: "Database & Tools" },
+  { name: "PostgreSQL", icon: Database, category: "Database & Tools" },
+  { name: "Redis", icon: Database, category: "Database & Tools" },
   { name: "MySQL", icon: SiMysql, category: "Database & Tools" },
   { name: "Git/GitHub", icon: SiGithub, category: "Database & Tools" },
-  { name: "ChromaDB", icon: Database, category: "Database & Tools" },
   { name: "JWT", icon: KeyRound, category: "Database & Tools" },
   { name: "Docker", icon: SiDocker, category: "Database & Tools" },
-  { name: "pytest", icon: SiPytest, category: "Database & Tools" },
+  { name: "Selenium", icon: SiSelenium, category: "Database & Tools" },
+  { name: "GitHub Actions (CI/CD)", icon: GitBranch, category: "DevOps & Testing" },
+  { name: "Cloud Deployment", icon: Cloud, category: "DevOps & Testing" },
+  { name: "Jest", icon: TestTube, category: "DevOps & Testing" },
+  { name: "Supertest", icon: TestTube, category: "DevOps & Testing" },
+  { name: "pytest", icon: SiPytest, category: "DevOps & Testing" },
 ];
 
 const categories = [
   "all",
   "Language",
-  "Backend & AI",
-  "Framework",
+  "Frontend",
+  "Backend",
+  "Agentic AI",
+  "ML & DL",
   "Database & Tools",
+  "DevOps & Testing",
 ];
 
 export const SkillsSection = () => {
@@ -147,7 +170,7 @@ export const SkillsSection = () => {
                   {skill.name}
                 </h3>
 
-                <div className="flex justify-center mt-3">
+                <div className="flex flex-wrap justify-center gap-2 mt-3">
                   <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary">
                     {skill.category}
                   </span>

@@ -1,4 +1,6 @@
-import { ExternalLink, Github, HeartPulse } from "lucide-react";
+import { Cloud, Code2, ExternalLink, Gamepad2, Github } from "lucide-react";
+
+const SHOW_PROJECT_LINKS = false;
 
 const projects = [
   {
@@ -41,23 +43,27 @@ const projects = [
   },
   {
     id: 5,
-    title: "CareLink – Hospital Discharge & Follow-Up Assistant",
+    title: "Cloud Kitchen ERP, CRM & Dispatch Platform",
     description:
-      "Safer discharge guidance and follow-ups, powered by AI.",
-    icon: HeartPulse,
-    tags: ["Python", "FastAPI", "FastMCP", "Gemini API", "RAG", "ChromaDB"],
-    demoUrl: "https://github.com/Kartikey-Gupta826/CareLink",
-    githubUrl: "https://github.com/Kartikey-Gupta826/CareLink",
+      "A multi-tenant operations platform for kitchen inventory, orders, billing, CRM, and dispatch.",
+    icon: Cloud,
+    tags: ["Next.js", "Node.js", "PostgreSQL", "Redis", "BullMQ", "FastAPI", "Docker"],
   },
   {
     id: 6,
-    title: "TaskChain – Role-Based Workflow API",
+    title: "Codebase Understanding System",
     description:
-      "Role-based task approvals that keep teams moving.",
-    image: "/projects/management-systems.jpg",
-    tags: ["Python", "FastAPI", "MongoDB", "JWT", "Pydantic", "Docker"],
-    demoUrl: "https://github.com/Kartikey-Gupta826/TaskChain",
-    githubUrl: "https://github.com/Kartikey-Gupta826/TaskChain",
+      "An agentic RAG platform that answers questions about GitHub repositories with file- and line-level citations.",
+    icon: Code2,
+    tags: ["Node.js", "LangChain.js", "LangGraph.js", "RAG", "pgvector", "Gemini API", "Redis"],
+  },
+  {
+    id: 7,
+    title: "Extensible RPG Engine",
+    description:
+      "A data-driven RPG engine with turn-based combat, quests, save/load, and AI-powered NPC dialogue.",
+    icon: Gamepad2,
+    tags: ["JavaScript", "Node.js", "HTML5 Canvas", "Gemini API", "Docker"],
   },
 ];
 
@@ -113,32 +119,34 @@ export const ProjectsSection = () => {
                 >
                   {project.description}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`Open ${project.title} demo`}
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`View ${project.title} on GitHub`}
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <Github size={20} />
-                      </a>
-                    )}
+                {SHOW_PROJECT_LINKS && (
+                  <div className="flex justify-between items-center">
+                    <div className="flex space-x-3">
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`Open ${project.title} demo`}
+                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`View ${project.title} on GitHub`}
+                          className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
+                          <Github size={20} />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           ))}
